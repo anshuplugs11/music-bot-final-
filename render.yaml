@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: telegram-music-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: API_ID
+        value: your_api_id
+      - key: API_HASH
+        value: your_api_hash
+      - key: BOT_TOKEN
+        value: your_bot_token
+      - key: OWNER_ID
+        value: your_owner_id
+      - key: SUDOERS
+        value: your_sudoers_list
+      - key: DATABASE_URL
+        value: sqlite:///music_bot.db
+      - key: DOWNLOAD_DIR
+        value: downloads
+      - key: MAX_DURATION
+        value: 3600
+      - key: QUEUE_LIMIT
+        value: 50
+      - key: AUDIO_QUALITY
+        value: 320
+      - key: VIDEO_QUALITY
+        value: 720
+      - key: AUTO_LEAVE_TIME
+        value: 600
+      - key: MAX_CONCURRENT_DOWNLOADS
+        value: 5
+      - key: MAX_PLAYLIST_SIZE
+        value: 100
+      - key: PORT
+        value: 8000
